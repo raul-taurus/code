@@ -1,0 +1,19 @@
+{
+  "name": "aws-sso-cred",
+  "version": "1.0.0",
+  "description": "Parse the aws sso cache to credentials file",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws",
+    "cdk",
+    "sso"
+  ],
+  "author": "Raul",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.32"
+  }
+}

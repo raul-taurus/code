@@ -57,8 +57,10 @@ class AwsSsoCred {
             console.error(`File \`${configFilePath}\` not found`);
             return;
         }
+        const profileName = args[0];
+        (0, child_process_1.execSync)(`aws sts get-caller-identity --profile ${profileName}`);
         const config = this.parseConfigFile(configFilePath);
-        const profile = config[args[0]];
+        const profile = config[profileName];
         const { Credentials: cred } = this.readCredCache(profile);
         const target = args[1] ? `profile.${args[1]}` : 'default';
         (0, child_process_1.execSync)(`

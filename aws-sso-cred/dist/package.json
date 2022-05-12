@@ -1,8 +1,10 @@
 {
   "name": "aws-sso-cred",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Parse the aws sso cache to credentials file",
-  "bin": "index.js",
+  "bin": {
+    "aws-sso-cred": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,5 +14,10 @@
     "sso"
   ],
   "author": "Raul",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raul-taurus/code/tree/main/aws-sso-cred/dist"
+  }
 }

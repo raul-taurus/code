@@ -90,8 +90,11 @@ class AwsSsoCred {
       return
     }
 
+    const profileName = args[0];
+    execSync(`aws sts get-caller-identity --profile ${profileName}`);
+
     const config = this.parseConfigFile(configFilePath);
-    const profile = config[args[0]];
+    const profile = config[profileName];
     const { Credentials: cred } = this.readCredCache(profile);
 
     const target = args[1] ? `profile.${args[1]}` : 'default'

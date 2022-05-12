@@ -1,6 +1,6 @@
 {
   "name": "aws-sso-cred",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parse the aws sso cache to credentials file",
   "bin": "index.js",
   "scripts": {

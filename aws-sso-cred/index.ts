@@ -99,12 +99,9 @@ class AwsSsoCred {
 
     const target = args[1] ? `profile.${args[1]}` : 'default'
 
-    execSync(`
-aws configure set ${target}.aws_access_key_id ${cred.AccessKeyId}
-aws configure set ${target}.aws_secret_access_key ${cred.SecretAccessKey}
-aws configure set ${target}.aws_session_token ${cred.SessionToken}
-`)
-
+    execSync(`aws configure set ${target}.aws_access_key_id ${cred.AccessKeyId}`)
+    execSync(`aws configure set ${target}.aws_secret_access_key ${cred.SecretAccessKey}`)
+    execSync(`aws configure set ${target}.aws_session_token ${cred.SessionToken}`)
   }
 }
 

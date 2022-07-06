@@ -63,11 +63,9 @@ class AwsSsoCred {
         const profile = config[profileName];
         const { Credentials: cred } = this.readCredCache(profile);
         const target = args[1] ? `profile.${args[1]}` : 'default';
-        (0, child_process_1.execSync)(`
-aws configure set ${target}.aws_access_key_id ${cred.AccessKeyId}
-aws configure set ${target}.aws_secret_access_key ${cred.SecretAccessKey}
-aws configure set ${target}.aws_session_token ${cred.SessionToken}
-`);
+        (0, child_process_1.execSync)(`aws configure set ${target}.aws_access_key_id ${cred.AccessKeyId}`);
+        (0, child_process_1.execSync)(`aws configure set ${target}.aws_secret_access_key ${cred.SecretAccessKey}`);
+        (0, child_process_1.execSync)(`aws configure set ${target}.aws_session_token ${cred.SessionToken}`);
     }
 }
 const [, , ...args] = process.argv;
